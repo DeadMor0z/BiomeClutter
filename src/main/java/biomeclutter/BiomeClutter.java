@@ -3,6 +3,8 @@ package biomeclutter;
 import biomeclutter.listener.GeneratedIslandFloraListener;
 import biomeclutter.object.FallenTreeTrunk1Object;
 import biomeclutter.object.FallenTreeTrunkObject;
+import biomeclutter.registry.MobModRegistry;
+import biomeclutter.registry.ObjectModRegistry;
 import necesse.engine.GameEvents;
 import necesse.engine.events.worldGeneration.GeneratedIslandFloraEvent;
 import necesse.engine.modLoader.annotations.ModEntry;
@@ -17,18 +19,21 @@ public class BiomeClutter {
     public void init() {
         System.out.println("BiomeClutter was enabled");
 
-        FallenTreeTrunkObject.registerTreeBark((TreeObject) ObjectRegistry.getObject("oaktree"), "fallenoaktrunk");
-        FallenTreeTrunkObject.registerTreeBark((TreeObject) ObjectRegistry.getObject("sprucetree"), "fallensprucetrunk");
-        FallenTreeTrunkObject.registerTreeBark((TreeObject) ObjectRegistry.getObject("willowtree"), "fallenwillowtrunk");
-        FallenTreeTrunkObject.registerTreeBark((TreeObject) ObjectRegistry.getObject("pinetree"), "fallenpinetrunk");
+        ObjectModRegistry.registerObjects();
+        MobModRegistry.registerMobs();
 
-        GameEvents.addListener(GeneratedIslandFloraEvent.class, new GeneratedIslandFloraListener());
+        this.addListeners();
     }
 
     public void initResources() {
     }
 
     public void postInit() {
+        ModResources.Textures.load();
+    }
+
+    public void addListeners() {
+        GameEvents.addListener(GeneratedIslandFloraEvent.class, new GeneratedIslandFloraListener());
     }
 
 }
