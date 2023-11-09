@@ -1,1 +1,9 @@
-Version 1.1:
+Version 1.1
+
+Added:
+- Added Rolling Tumbleweed that rolls across desert biomes, don't try to hug it
+- Added Cut Tree Trunks that rarely generate on newly generated islands
+
+
+Changed:
+- Fixed the bug where clutter didn't generate in plain biome islands

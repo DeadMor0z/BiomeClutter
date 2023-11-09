@@ -1,6 +1,6 @@
 package biomeclutter.registry;
 
-import biomeclutter.entity.hostile.RollingTumbleweed;
+import biomeclutter.entity.friendly.RollingTumbleweed;
 import necesse.engine.registries.MobRegistry;
 
 public class MobModRegistry {

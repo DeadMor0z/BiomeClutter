@@ -1,9 +1,11 @@
-package biomeclutter.entity.hostile;
+package biomeclutter.entity.friendly;
 
 import biomeclutter.ModResources;
 import biomeclutter.entity.ai.leave.CollisionDirectionalAINode;
+import necesse.engine.Screen;
 import necesse.engine.localization.message.GameMessage;
 import necesse.engine.localization.message.LocalMessage;
+import necesse.engine.sound.SoundEffect;
 import necesse.engine.tickManager.TickManager;
 import necesse.engine.util.GameUtils;
 import necesse.entity.mobs.GameDamage;
@@ -13,6 +15,7 @@ import necesse.entity.mobs.ai.behaviourTree.BehaviourTreeAI;
 import necesse.entity.mobs.friendly.critters.CritterMob;
 import necesse.entity.particle.FleshParticle;
 import necesse.entity.particle.Particle;
+import necesse.gfx.GameResources;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.DrawOptions;
 import necesse.gfx.drawOptions.texture.TextureDrawOptions;
@@ -38,6 +41,17 @@ public class RollingTumbleweed extends CritterMob {
     @Override
     public GameMessage getLocalization() {
         return new LocalMessage("mobs", "rollingtumbleweed");
+    }
+
+    @Override
+    protected void playDeathSound() {
+        Screen.playSound(GameResources.crack, SoundEffect.effect(this).volume(1.5F));
+    }
+
+    @Override
+    public void serverTick() {
+        super.serverTick();
+        this.huntJob = null;
     }
 
     public void spawnDeathParticles(float knockbackX, float knockbackY) {
