@@ -1,9 +1,10 @@
 package biomeclutter;
 
-import biomeclutter.listener.GenerateIslandFloraListener;
-import biomeclutter.object.TreeBarkObject;
+import biomeclutter.listener.GeneratedIslandFloraListener;
+import biomeclutter.object.FallenTreeTrunk1Object;
+import biomeclutter.object.FallenTreeTrunkObject;
 import necesse.engine.GameEvents;
-import necesse.engine.events.worldGeneration.GenerateIslandFloraEvent;
+import necesse.engine.events.worldGeneration.GeneratedIslandFloraEvent;
 import necesse.engine.modLoader.annotations.ModEntry;
 import necesse.engine.registries.ObjectRegistry;
 import necesse.level.gameObject.TreeObject;
@@ -16,12 +17,12 @@ public class BiomeClutter {
     public void init() {
         System.out.println("BiomeClutter was enabled");
 
-        TreeBarkObject.registerTreeBark((TreeObject) ObjectRegistry.getObject("oaktree"), "oakbark", new Color(86, 69, 40));
-        TreeBarkObject.registerTreeBark((TreeObject) ObjectRegistry.getObject("sprucetree"), "sprucebark", new Color(86, 69, 40));
-        TreeBarkObject.registerTreeBark((TreeObject) ObjectRegistry.getObject("willowtree"), "willowbark", new Color(86, 69, 40));
-        TreeBarkObject.registerTreeBark((TreeObject) ObjectRegistry.getObject("pinetree"), "pinebark", new Color(86, 69, 40));
+        FallenTreeTrunkObject.registerTreeBark((TreeObject) ObjectRegistry.getObject("oaktree"), "fallenoaktrunk");
+        FallenTreeTrunkObject.registerTreeBark((TreeObject) ObjectRegistry.getObject("sprucetree"), "fallensprucetrunk");
+        FallenTreeTrunkObject.registerTreeBark((TreeObject) ObjectRegistry.getObject("willowtree"), "fallenwillowtrunk");
+        FallenTreeTrunkObject.registerTreeBark((TreeObject) ObjectRegistry.getObject("pinetree"), "fallenpinetrunk");
 
-        GameEvents.addListener(GenerateIslandFloraEvent.class, new GenerateIslandFloraListener());
+        GameEvents.addListener(GeneratedIslandFloraEvent.class, new GeneratedIslandFloraListener());
     }
 
     public void initResources() {
