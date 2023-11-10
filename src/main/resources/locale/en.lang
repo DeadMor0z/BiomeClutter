@@ -1,7 +1,12 @@
+[item]
+sweetberry=Sweetberry
+
 [object]
 fallentreetrunk=Fallen <tree> Trunk
 cuttreetrunk=Cut <tree> Trunk
 surfacecactussmall=Small Single Cactus
+sweetberrybush=Sweetberry Bush
+sweetberrysapling=Sweetberry Sapling
 
 [mobs]
 rollingtumbleweed=Rolling Tumbleweed

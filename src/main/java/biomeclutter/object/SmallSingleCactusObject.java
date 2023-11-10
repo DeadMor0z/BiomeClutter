@@ -14,7 +14,7 @@ import java.awt.*;
 public class SmallSingleCactusObject extends SmallSingleRandomObject {
 
     public SmallSingleCactusObject() {
-        super(new Rectangle(4, 16, 24, 12));
+        super(new Rectangle(4, 16, 24, 12), 250, 0.02F, 1F, 0.1F);
         this.mapColor = new Color(101, 189, 75);
         this.toolType = ToolType.AXE;
     }

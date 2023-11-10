@@ -3,6 +3,7 @@ package biomeclutter;
 import biomeclutter.listener.GeneratedIslandFloraListener;
 import biomeclutter.object.FallenTreeTrunk1Object;
 import biomeclutter.object.FallenTreeTrunkObject;
+import biomeclutter.registry.ItemModRegistry;
 import biomeclutter.registry.MobModRegistry;
 import biomeclutter.registry.ObjectModRegistry;
 import necesse.engine.GameEvents;
@@ -19,6 +20,7 @@ public class BiomeClutter {
     public void init() {
         System.out.println("BiomeClutter was enabled");
 
+        ItemModRegistry.registerItems();
         ObjectModRegistry.registerObjects();
         MobModRegistry.registerMobs();
 
@@ -26,10 +28,10 @@ public class BiomeClutter {
     }
 
     public void initResources() {
+        ModResources.Textures.load();
     }
 
     public void postInit() {
-        ModResources.Textures.load();
     }
 
     public void addListeners() {

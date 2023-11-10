@@ -22,8 +22,10 @@ public class GeneratedIslandFloraListener extends GameEventListener<GeneratedIsl
             event.islandGeneration.generateObjects(ObjectRegistry.getObjectID("cutoaktrunk"), TileRegistry.grassID, GameRandom.globalRandom.getFloatBetween(0.0002F, 0.0005F));
             event.islandGeneration.generateObjects(ObjectRegistry.getObjectID("cutsprucetrunk"), TileRegistry.grassID, GameRandom.globalRandom.getFloatBetween(0.0001F, 0.0003F));
         } else if (event.level instanceof SnowSurfaceLevel) {
-            event.islandGeneration.generateObjects(ObjectRegistry.getObjectID("fallenpinetrunk"), TileRegistry.grassID, GameRandom.globalRandom.getFloatBetween(0.001F, 0.003F));
-            event.islandGeneration.generateObjects(ObjectRegistry.getObjectID("cutpinetrunk"), TileRegistry.grassID, GameRandom.globalRandom.getFloatBetween(0.0002F, 0.0005F));
+            event.islandGeneration.generateObjects(ObjectRegistry.getObjectID("fallenpinetrunk"), TileRegistry.snowID, GameRandom.globalRandom.getFloatBetween(0.001F, 0.003F));
+            event.islandGeneration.generateObjects(ObjectRegistry.getObjectID("cutpinetrunk"), TileRegistry.snowID, GameRandom.globalRandom.getFloatBetween(0.0002F, 0.0005F));
+
+            event.islandGeneration.generateFruitGrowerVeins("sweetberrybush", 0.04F, 8, 10, 0.1F, TileRegistry.snowID);
 
         } else if (event.level instanceof SwampSurfaceLevel) {
             event.islandGeneration.generateObjects(ObjectRegistry.getObjectID("fallenwillowtrunk"), TileRegistry.swampGrassID, GameRandom.globalRandom.getFloatBetween(0.001F, 0.003F));
