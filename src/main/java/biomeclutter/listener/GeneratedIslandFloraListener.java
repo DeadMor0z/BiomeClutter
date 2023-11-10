@@ -5,6 +5,7 @@ import necesse.engine.events.worldGeneration.GeneratedIslandFloraEvent;
 import necesse.engine.registries.ObjectRegistry;
 import necesse.engine.registries.TileRegistry;
 import necesse.engine.util.GameRandom;
+import necesse.level.maps.biomes.desert.DesertSurfaceLevel;
 import necesse.level.maps.biomes.forest.ForestSurfaceLevel;
 import necesse.level.maps.biomes.plains.PlainsSurfaceLevel;
 import necesse.level.maps.biomes.snow.SnowSurfaceLevel;
@@ -25,8 +26,10 @@ public class GeneratedIslandFloraListener extends GameEventListener<GeneratedIsl
             event.islandGeneration.generateObjects(ObjectRegistry.getObjectID("cutpinetrunk"), TileRegistry.grassID, GameRandom.globalRandom.getFloatBetween(0.0002F, 0.0005F));
 
         } else if (event.level instanceof SwampSurfaceLevel) {
-            event.islandGeneration.generateObjects(ObjectRegistry.getObjectID("fallenwillowtrunk"), TileRegistry.grassID, GameRandom.globalRandom.getFloatBetween(0.001F, 0.003F));
-            event.islandGeneration.generateObjects(ObjectRegistry.getObjectID("cutwillowtrunk"), TileRegistry.grassID, GameRandom.globalRandom.getFloatBetween(0.0002F, 0.0005F));
+            event.islandGeneration.generateObjects(ObjectRegistry.getObjectID("fallenwillowtrunk"), TileRegistry.swampGrassID, GameRandom.globalRandom.getFloatBetween(0.001F, 0.003F));
+            event.islandGeneration.generateObjects(ObjectRegistry.getObjectID("cutwillowtrunk"), TileRegistry.swampGrassID, GameRandom.globalRandom.getFloatBetween(0.0002F, 0.0005F));
+        } else if (event.level instanceof DesertSurfaceLevel) {
+            event.islandGeneration.generateObjects(ObjectRegistry.getObjectID("surfacecactussmall"), TileRegistry.sandID, GameRandom.globalRandom.getFloatBetween(0.001F, 0.002F));
         }
     }
 }

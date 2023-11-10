@@ -2,6 +2,7 @@ package biomeclutter.registry;
 
 import biomeclutter.object.CutTreeTrunkObject;
 import biomeclutter.object.FallenTreeTrunkObject;
+import biomeclutter.object.SmallSingleCactusObject;
 import necesse.engine.registries.ObjectRegistry;
 import necesse.level.gameObject.GameObject;
 import necesse.level.gameObject.TreeObject;
@@ -26,6 +27,8 @@ public class ObjectModRegistry {
         ObjectRegistry.registerObject("cutsprucetrunk", new CutTreeTrunkObject(oakTree, "cutsprucetrunk", deadwood), 0F, false);
         ObjectRegistry.registerObject("cutwillowtrunk", new CutTreeTrunkObject(oakTree, "cutwillowtrunk", deadwood), 0F, false);
         ObjectRegistry.registerObject("cutpinetrunk", new CutTreeTrunkObject(oakTree, "cutpinetrunk", deadwood), 0F, false);
+
+        ObjectRegistry.registerObject("surfacecactussmall", new SmallSingleCactusObject(), 0F, false);
     }
 
 }
