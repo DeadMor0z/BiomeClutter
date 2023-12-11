@@ -28,7 +28,7 @@ public class FallenTreeTrunkObject extends GameObject {
         this.toolType = ToolType.AXE;
         this.toolTier = type.toolTier;
         this.displayMapTooltip = true;
-        this.drawDmg = false;
+        this.drawDamage = false;
         this.isLightTransparent = true;
         this.drawRandom = new GameRandom();
     }

@@ -1,13 +1,5 @@
-Version 1.1
+[Version 1.2 Changelog]
 
-Added:
-- Added Rolling Tumbleweed that rolls across desert biomes, don't try to hug it
-- Added Cut Tree Trunks that rarely generate
-- Added Small Cactus to the desert
-- Added Sweetberry bushes to snow biomes
-
-Changed:
-- Fixed the bug where clutter didn't generate in plain biome islands
-- Fixed trunks not generating in swamp biomes
-- Fixed trunks not generating in snow biomes
-- Changed pine trunks textures to include snowed-on variants
+Changes:
+- Update to latest game version 0.23.0
+- Removed some unused code

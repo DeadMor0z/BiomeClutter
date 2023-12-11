@@ -1,14 +1,11 @@
 package biomeclutter.object;
 
 import necesse.engine.tickManager.TickManager;
-import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.camera.GameCamera;
 import necesse.gfx.drawOptions.texture.TextureDrawOptions;
 import necesse.gfx.drawables.LevelSortedDrawable;
 import necesse.gfx.drawables.OrderableDrawables;
-import necesse.gfx.gameTexture.GameTexture;
-import necesse.inventory.item.toolItem.ToolType;
 import necesse.inventory.lootTable.LootTable;
 import necesse.inventory.lootTable.lootItem.LootItem;
 import necesse.level.gameObject.*;

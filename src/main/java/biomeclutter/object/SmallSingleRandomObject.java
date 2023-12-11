@@ -32,7 +32,7 @@ public class SmallSingleRandomObject extends GameObject {
     public SmallSingleRandomObject(Rectangle collision, int weaveTime, float weaveAmount, float weaveHeight, float waveHeightOffset) {
         super(collision);
         this.displayMapTooltip = true;
-        this.drawDmg = false;
+        this.drawDamage = false;
         this.isLightTransparent = true;
         this.drawRandom = new GameRandom();
         this.isWeaveApplicable = weaveTime > 0;

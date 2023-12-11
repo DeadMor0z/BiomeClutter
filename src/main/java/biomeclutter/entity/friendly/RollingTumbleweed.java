@@ -88,9 +88,7 @@ public class RollingTumbleweed extends CritterMob {
         });
         if (!inLiquid) {
             TextureDrawOptions shadow = ModResources.Textures.rollingtumbleweed_shadow.initDraw().sprite(spriteX, 0, 32).light(light).pos(drawX, drawY);
-            tileList.add((tm) -> {
-                shadow.draw();
-            });
+            tileList.add((tm) -> shadow.draw());
         }
 
     }
