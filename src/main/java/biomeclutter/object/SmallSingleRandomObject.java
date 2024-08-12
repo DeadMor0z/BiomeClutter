@@ -1,7 +1,7 @@
 package biomeclutter.object;
 
 import necesse.engine.network.server.ServerClient;
-import necesse.engine.tickManager.TickManager;
+import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.util.GameRandom;
 import necesse.entity.mobs.PlayerMob;
 import necesse.gfx.GameResources;
@@ -64,11 +64,13 @@ public class SmallSingleRandomObject extends GameObject {
         int drawY = camera.getTileDrawY(tileY);
         final int randomYOffset = this.getRandomYOffset(tileX, tileY);
         int sprite;
-        final WaveShader.WaveState waveState = GameResources.waveShader.setupGrassWave(level, tileX, tileY, this.weaveTime, this.weaveAmount, this.weaveHeight, 2, this.waveHeightOffset, this.drawRandom, this.getTileSeed(tileX, tileY, 0));
-        synchronized(this.drawRandom) {
-            sprite = this.drawRandom.seeded(this.getTileSeed(tileX, tileY)).nextInt(this.texture.getWidth() / 32);
+        boolean mirror;
+        synchronized (this.drawRandom) {
+            this.drawRandom.setSeed(this.getTileSeed(tileX, tileY));
+            mirror = this.drawRandom.nextBoolean();
+            sprite = this.drawRandom.nextInt(this.texture.getWidth() / 32);
         }
-
+        final WaveShader.WaveState waveState = GameResources.waveShader.setupGrassWaveShader(level, tileX, tileY, this.weaveTime, this.weaveAmount, this.weaveHeight, 2, this.waveHeightOffset, this.drawRandom, this.getTileSeed(tileX, tileY, 0), mirror, 2.0f);
         drawY += randomYOffset;
         final TextureDrawOptions options = this.texture.initDraw().sprite(sprite, 0, 32, this.texture.getHeight()).light(light).pos(drawX, drawY - this.texture.getHeight() + 32);
         list.add(new LevelSortedDrawable(this, tileX, tileY) {

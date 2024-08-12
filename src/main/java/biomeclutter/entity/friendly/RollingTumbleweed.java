@@ -2,11 +2,11 @@ package biomeclutter.entity.friendly;
 
 import biomeclutter.ModResources;
 import biomeclutter.entity.ai.leave.CollisionDirectionalAINode;
-import necesse.engine.Screen;
 import necesse.engine.localization.message.GameMessage;
 import necesse.engine.localization.message.LocalMessage;
 import necesse.engine.sound.SoundEffect;
-import necesse.engine.tickManager.TickManager;
+import necesse.engine.sound.SoundManager;
+import necesse.engine.gameLoop.tickManager.TickManager;
 import necesse.engine.util.GameUtils;
 import necesse.entity.mobs.GameDamage;
 import necesse.entity.mobs.MobDrawable;
@@ -45,7 +45,7 @@ public class RollingTumbleweed extends CritterMob {
 
     @Override
     protected void playDeathSound() {
-        Screen.playSound(GameResources.crack, SoundEffect.effect(this).volume(1.5F));
+        SoundManager.playSound(GameResources.crack, SoundEffect.effect(this).volume(1.5F));
     }
 
     @Override
